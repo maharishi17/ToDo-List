@@ -73,7 +73,7 @@ function App() {
   return (
     <div className="app">
       <header className="header">
-        <h1>Enhanced Todo</h1>
+        <h1> Todo</h1>
         <div className="controls">
           <SearchBar value={search} onChange={setSearch} />
           <button onClick={toggle} className="icon" aria-label="toggle theme">
