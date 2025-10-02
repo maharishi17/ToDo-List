@@ -222,3 +222,98 @@ body{
   .add-form input[type='text']{ flex-basis:100%; }
   .todo-list{ padding:12px; }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* --------------------------
+   Responsive media queries
+   -------------------------- */
+
+/* Large screens (>= 1200px) — small tweaks for very wide displays */
+@media (min-width:1200px) {
+  .app { max-width:1200px; }
+  .form-wrap { padding:18px; }
+  .add-form input[type='text']{ font-size:16px; }
+  .todo-item { padding:16px; }
+}
+
+/* Desktop / Laptop (901px - 1199px) */
+@media (min-width:901px) and (max-width:1199px) {
+  .main-center { gap:20px; }
+  .controls-row { max-width:1000px; }
+  .todo-list { max-width:1000px; padding:20px; }
+}
+
+/* Tablet (601px - 900px) — stack some controls, keep centered */
+@media (min-width:601px) and (max-width:900px) {
+  .top-block { align-items:stretch; gap:14px; }
+  .form-wrap { max-width:720px; margin:0 auto; }
+  .controls-row { flex-direction:row; flex-wrap:wrap; align-items:center; gap:10px; justify-content:space-between; }
+  .filter-group { flex:1 1 55%; }
+  .summary { flex:1 1 40%; justify-content:flex-end; }
+  .add-form input[type='text']{ flex-basis:55%; min-width:220px; }
+  .add-form select, .add-form input[type='date']{ flex-basis:20%; min-width:120px; }
+  .todo-list { max-width:720px; margin:0 auto; padding:16px; }
+  .todo-item { gap:10px; }
+}
+
+/* Small tablet / large mobile (421px - 600px) */
+@media (min-width:421px) and (max-width:600px) {
+  .top-block { gap:12px; }
+  .form-wrap { padding:12px; max-width:520px; }
+  .controls-row { flex-direction:column; align-items:stretch; gap:8px; }
+  .filter-group { width:100%; display:flex; justify-content:space-between; align-items:center; }
+  .filter-buttons { flex-wrap:wrap; gap:6px; }
+  .add-form { gap:8px; }
+  .add-form input[type='text']{ flex-basis:100%; }
+  .add-form select, .add-form input[type='date']{ width:48%; }
+  .summary { width:100%; display:flex; justify-content:space-between; gap:8px; }
+  .todo-list { max-width:520px; padding:12px; }
+  .title { font-size:15px; }
+}
+
+/* Mobile (<= 420px) — single-column, full-width controls */
+@media (max-width:420px) {
+  body { padding:16px; }
+  .app { padding:0 4px; }
+  .form-wrap { width:100%; padding:10px; border-radius:10px; box-shadow: none; }
+  .add-form { flex-direction:column; align-items:stretch; gap:8px; }
+  .add-form input[type='text'], .add-form select, .add-form input[type='date'], .add-form button {
+    width:100%; box-sizing:border-box;
+  }
+  .controls-row { flex-direction:column; align-items:stretch; gap:10px; padding-top:6px; }
+  .filter-buttons { display:flex; gap:6px; overflow-x:auto; padding-bottom:6px; }
+  .filter-buttons button { flex:0 0 auto; }
+  .summary { display:flex; flex-wrap:wrap; gap:8px; justify-content:space-between; }
+  .stat { flex:1 1 48%; display:flex; justify-content:space-between; align-items:center; padding:8px; }
+  .clear-btn { width:100%; text-align:center; margin-top:4px; }
+  .center-list { padding:0 6px; }
+  .todo-list { max-width:100%; padding:8px; gap:10px; }
+  .todo-item { flex-direction:column; align-items:flex-start; gap:8px; padding:10px; }
+  .todo-item .left { width:100%; }
+  .del { align-self:flex-end; }
+  .title { font-size:14px; }
+  .small { font-size:12px; }
+}
+
+/* Accessibility & small fixes */
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* Ensure inputs, selects and date pickers never overflow their containers */
+.add-form input, .add-form select, .add-form input[type='date'] {
+  max-width:100%;
+  box-sizing:border-box;
+}
